@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝑫𝑶𝑪𝑻𝑶𝑹 𝑺𝑬𝑹𝑽𝑰𝑪𝑬𝑺 - 𝑬𝑳 𝑺𝑨𝑴𝑼𝑹𝑨𝑰 </title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+  margin:0;
+  font-family: 'Cairo', sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color: #0a0f14;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 40px 30px;
+  border-radius: 25px;
+  backdrop-filter: blur(20px);
+  background: rgba(20,25,35,0.85);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+  position: relative;
+  text-align: center;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+h2 {
+  color:#00ffff;
+  margin-bottom:5px;
+  font-size:24px;
+  text-shadow: 0 0 15px #00ffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h4 {
+  color:#ffffffaa;
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+.input-group {
+  position: relative;
+  margin: 18px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 5px 20px rgba(0,255,255,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.input-group:hover {
+  transform: scale(1.03);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 45px 16px 15px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.input-group input::placeholder {
+  color: #00ffffaa;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #00ffff;
+  transition: transform 0.3s;
+}
+
+.input-group input:focus + i {
+  transform: translateY(-50%) rotate(20deg);
+}
+
+button {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 35px;
+  background: linear-gradient(45deg,#00ffff,#ff8c42,#00ffff);
+  background-size: 200% 200%;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,255,255,0.5);
+  transition: transform 0.2s;
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #ffffff66;
+}
+
+@media (max-width: 420px) {
+  h2 { font-size: 22px; }
+  h4 { font-size: 12px; }
+  input { font-size: 15px; padding: 12px; }
+  button { font-size: 17px; padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://i.postimg.cc/Pq7jr1Lg/IMG-20250809-WA0000.png" class="logo">
+  <h2>𝑫𝑶𝑪𝑻𝑶𝑹 𝑺𝑬𝑹𝑽𝑰𝑪𝑬𝑺</h2>
+  <h4>تابع لفريق 𝑬𝑳 𝑺𝑨𝑴𝑼𝑹𝑨𝑰</h4>
+
+  <div class="input-group">
+    <input type="text" id="userName" placeholder="اكتب اسمك">
+    <i class="fa fa-user"></i>
+  </div>
+
+  <div class="input-group">
+    <input type="number" id="points" placeholder="عدد النقاط">
+    <i class="fa fa-coins"></i>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="telegramId" placeholder="ID التليجرام">
+    <i class="fa fa-id-badge"></i>
+  </div>
+
+  <button id="rechargeBtn">🔋 طلب شحن الرصيد</button>
+
+  <div class="footer">جميع الحقوق محفوظة لدى 𝑬𝑳 𝑺𝑨𝑴𝑼𝑹𝑨𝑰 </div>
+</div>
+
+<script>
+document.getElementById('rechargeBtn').addEventListener('click', function() {
+    let phoneNumber = "201033034624";
+    let botId = "Trusted_doctor_67bot";
+
+    let userName = document.getElementById('userName').value || "مستخدم";
+    let points = document.getElementById('points').value || "0";
+    let telegramId = document.getElementById('telegramId').value || "غير محدد";
+
+    let now = new Date();
+    let date = now.toLocaleDateString("ar-EG");
+    let time = now.toLocaleTimeString("ar-EG");
+
+    let message = 
+`📋 تقرير طلب شحن رصيد
+━━━━━━━━━━━━━━
+👤 الاسم: ${userName}
+🆔 معرف البوت: ${botId}
+📝 عدد النقاط: ${points}
+📱 ID التليجرام: ${telegramId}
+📅 التاريخ: ${date}
+⏰ الوقت: ${time}
+━━━━━━━━━━━━━━
+🔋 طلب شحن رصيد من بوت 𝑫𝑶𝑪𝑻𝑶𝑹 𝑺𝑬𝑹𝑽𝑰𝑪𝑬𝑺
+💬 يرجى متابعة الطلب في أسرع وقت`;
+
+    let encodedMessage = encodeURIComponent(message);
+    let whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappLink, '_blank');
+});
+</script>
+
+</body>
+</html>
